@@ -97,9 +97,11 @@
   .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
   .chip { font-family: var(--mono); font-size: 0.66rem; color: var(--ink-soft); background: var(--surface-sunk); border-radius: 6px; padding: 0.18rem 0.5rem; }
 
-  .card-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--rule); padding-top: 0.9rem; font-size: 0.8rem; }
+  .card-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; border-top: 1px dashed var(--rule); padding-top: 0.9rem; font-size: 0.8rem; }
   .card-foot a { text-decoration: none; font-family: var(--mono); font-size: 0.76rem; }
   .contact-todo { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-faint); }
+  .cv-download { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--mono); font-size: 0.76rem; text-decoration: none; color: var(--accent-ink); background: var(--accent-soft); padding: 0.35rem 0.7rem; border-radius: 999px; }
+  .cv-download:hover { filter: brightness(0.95); }
 
   footer { max-width: 1080px; margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--ink-faint); font-size: 0.8rem; font-family: var(--mono); line-height: 1.6; }
 </style>
@@ -147,6 +149,7 @@
       <div class="card-foot">
         <a href="https://www.linkedin.com/in/mauriciovalenzuelacorvalan/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <span class="contact-todo">mauvalenzuela@ug.uchile.cl</span>
+        <a class="cv-download" href="cv-mauricio-valenzuela.pdf" download>Descargar CV ↓</a>
       </div>
     </article>
 
@@ -178,6 +181,7 @@
       <div class="card-foot">
         <span class="contact-todo">flavio.poblete@uchile.cl</span>
         <span class="contact-todo">+56 9 9896 8588</span>
+        <a class="cv-download" href="cv-flavio-poblete.pdf" download>Descargar CV ↓</a>
       </div>
     </article>
 
