@@ -1,0 +1,191 @@
+<title>Equipo Corleone</title>
+<style>
+  :root {
+    --bg: #EEF1EE;
+    --surface: #FFFFFF;
+    --surface-sunk: #E2E7E1;
+    --ink: #171F1A;
+    --ink-soft: #46524A;
+    --ink-faint: #78857D;
+    --rule: #D3DBD1;
+    --accent: #1F6B4A;
+    --accent-ink: #164E36;
+    --accent-soft: #DCEAE1;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121714;
+      --surface: #1A211C;
+      --surface-sunk: #151B17;
+      --ink: #E7EDE9;
+      --ink-soft: #A9B7AD;
+      --ink-faint: #718075;
+      --rule: #283029;
+      --accent: #5FC48F;
+      --accent-ink: #8ED9AE;
+      --accent-soft: #1C3327;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121714;
+    --surface: #1A211C;
+    --surface-sunk: #151B17;
+    --ink: #E7EDE9;
+    --ink-soft: #A9B7AD;
+    --ink-faint: #718075;
+    --rule: #283029;
+    --accent: #5FC48F;
+    --accent-ink: #8ED9AE;
+    --accent-soft: #1C3327;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.5; margin: 0; padding: 0 1.5rem 6rem; }
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+  a { color: var(--accent-ink); }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+
+  header.masthead { padding: 3rem 0 2rem; border-bottom: 1px solid var(--rule); }
+  .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 0.9rem; }
+  h1.title { font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 0.9rem; text-wrap: balance; }
+  .dek { font-size: 1rem; color: var(--ink-soft); max-width: 68ch; margin: 0 0 1.5rem; }
+
+  .roles-strip { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .role-chip { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.85rem; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); font-size: 0.82rem; }
+  .role-chip b { color: var(--accent-ink); font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  section.team { padding: 2.5rem 0; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+
+  article.card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .card-top { display: flex; gap: 1rem; align-items: center; }
+  .avatar {
+    flex: none;
+    width: 3.4rem; height: 3.4rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-weight: 700; font-size: 1.1rem;
+    border: 1px solid var(--rule);
+  }
+  h2.founder-name { font-size: 1.25rem; margin: 0 0 0.15rem; font-weight: 800; letter-spacing: -0.01em; }
+  p.founder-degree { margin: 0; font-size: 0.82rem; color: var(--ink-faint); }
+
+  .role-tag { align-self: flex-start; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent-soft); padding: 0.2rem 0.6rem; border-radius: 999px; }
+
+  .founder-summary { font-size: 0.87rem; color: var(--ink-soft); margin: 0; }
+
+  .block-label { font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0 0 0.5rem; }
+
+  ul.highlights { margin: 0; padding-left: 1.05rem; font-size: 0.85rem; color: var(--ink); display: flex; flex-direction: column; gap: 0.3rem; }
+  ul.highlights li::marker { color: var(--accent); }
+
+  .skill-groups { display: flex; flex-direction: column; gap: 0.6rem; }
+  .skill-group b { display: block; font-size: 0.76rem; color: var(--ink); margin-bottom: 0.3rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip { font-family: var(--mono); font-size: 0.66rem; color: var(--ink-soft); background: var(--surface-sunk); border-radius: 6px; padding: 0.18rem 0.5rem; }
+
+  .card-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--rule); padding-top: 0.9rem; font-size: 0.8rem; }
+  .card-foot a { text-decoration: none; font-family: var(--mono); font-size: 0.76rem; }
+  .contact-todo { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-faint); }
+
+  footer { max-width: 1080px; margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--ink-faint); font-size: 0.8rem; font-family: var(--mono); line-height: 1.6; }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Corleone Solutions · Equipo fundador</p>
+  <h1 class="title">Los 2 socios, de un vistazo</h1>
+  <p class="dek">Formación, especialidad técnica y experiencia real de cada uno — armado a partir de sus CV, para que se conozcan rápido entre ustedes antes de repartir roles en un proyecto.</p>
+  <div class="roles-strip">
+    <div class="role-chip"><b>Comercial / Negocio</b> Mauricio</div>
+    <div class="role-chip"><b>Delivery técnico completo — Datos, IA/ML, infraestructura</b> Flavio</div>
+  </div>
+</header>
+
+<section class="team">
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-top">
+        <div class="avatar">MV</div>
+        <div>
+          <h2 class="founder-name">Mauricio Valenzuela Corvalán</h2>
+          <p class="founder-degree">Ing. Civil Industrial · Lic. Astronomía · Magíster Ec. Aplicada (U. de Chile)</p>
+        </div>
+      </div>
+      <span class="role-tag">Negocio, gestión y economía aplicada</span>
+      <p class="founder-summary">Formación interdisciplinaria: ingeniería industrial, astronomía computacional y economía aplicada. Docencia continua en evaluación de proyectos y comportamiento organizacional — el perfil más natural para propuestas, pricing y gestión de la relación con el cliente.</p>
+      <div>
+        <p class="block-label">Highlights</p>
+        <ul class="highlights">
+          <li>Sistema multiagente (LangChain) para detección de riesgo suicida estudiantil — bow.care</li>
+          <li>Datos sintéticos en sistemas HPC para el observatorio Vera C. Rubin — ALeRCE / CMM</li>
+          <li>Profesor de Evaluación de Proyectos y Organización Industrial, U. de Chile (2022–2026)</li>
+        </ul>
+      </div>
+      <div class="skill-groups">
+        <p class="block-label">Herramientas</p>
+        <div class="chips">
+          <span class="chip">R avanzado</span><span class="chip">Python avanzado</span><span class="chip">MySQL</span>
+          <span class="chip">PowerBI</span><span class="chip">Linux</span><span class="chip">LaTeX</span>
+        </div>
+      </div>
+      <div class="card-foot">
+        <a href="https://www.linkedin.com/in/mauriciovalenzuelacorvalan/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span class="contact-todo">maosvalenzuela@gmail.com</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="avatar">FP</div>
+        <div>
+          <h2 class="founder-name">Flavio Poblete</h2>
+          <p class="founder-degree">Ing. Civil Industrial, Distinción Máxima (U. de Chile)</p>
+        </div>
+      </div>
+      <span class="role-tag">Delivery técnico — Datos, infraestructura, IA/ML y gobierno de datos</span>
+      <p class="founder-summary">Especializado en ingeniería de datos y gobernanza, con base sólida además en machine learning, deep learning y NLP. Participa en el programa institucional de Gobierno de Datos de la Universidad de Chile (framework DAMA-DMBOK) y en la adopción de la nueva Ley de Protección de Datos Personales.</p>
+      <div>
+        <p class="block-label">Highlights</p>
+        <ul class="highlights">
+          <li>Desambiguación de autores en publicaciones científicas (WoS, Scopus, SciELO) con embeddings + NLP</li>
+          <li>Pipelines ETL/ELT de alto rendimiento (PySpark, Polars) sobre múltiples formatos y motores</li>
+          <li>Catálogo de datos institucional para el proceso de Acreditación 2025, U. de Chile</li>
+        </ul>
+      </div>
+      <div class="skill-groups">
+        <p class="block-label">Herramientas</p>
+        <div class="chips">
+          <span class="chip">PySpark</span><span class="chip">Polars</span><span class="chip">Neo4j</span>
+          <span class="chip">Oracle / SQL Server</span><span class="chip">DAMA-DMBOK</span><span class="chip">N8N</span>
+        </div>
+      </div>
+      <div class="card-foot">
+        <span class="contact-todo">flavio.poblete@uchile.cl</span>
+        <span class="contact-todo">+56 9 9896 8588</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  Compilado desde los CV entregados en la carpeta RRHH — información real de cada socio, sin relleno. La franja de roles sugeridos (Comercial/Delivery técnico) es una propuesta a partir de la formación de cada uno; ajústenla si prefieren otro reparto.
+</footer>
+
+</div>
