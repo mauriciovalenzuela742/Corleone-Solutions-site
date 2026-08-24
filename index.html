@@ -57,8 +57,8 @@
   .role-chip b { color: var(--accent-ink); font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
 
   section.team { padding: 2.5rem 0; }
-  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-  @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 
   article.card {
     background: var(--surface);
@@ -110,11 +110,12 @@
 
 <header class="masthead">
   <p class="eyebrow">Corleone Solutions · Equipo fundador</p>
-  <h1 class="title">Los 2 socios, de un vistazo</h1>
+  <h1 class="title">Los 3 socios, de un vistazo</h1>
   <p class="dek">Formación, especialidad técnica y experiencia real de cada uno.</p>
   <div class="roles-strip">
-    <div class="role-chip"><b>Comercial / Negocio</b> Mauricio</div>
-    <div class="role-chip"><b>Delivery técnico completo — Datos, IA/ML, infraestructura</b> Flavio</div>
+    <div class="role-chip"><b>CEO</b> Mauricio — Negocio, gestión y economía aplicada</div>
+    <div class="role-chip"><b>CTO</b> Diego — IA, Visión Computacional y Deep Learning</div>
+    <div class="role-chip"><b>CDO</b> Flavio — Datos, infraestructura y gobierno de datos</div>
   </div>
 </header>
 
@@ -129,7 +130,7 @@
           <p class="founder-degree">Ing. Civil Industrial · Lic. Astronomía · Magíster Ec. Aplicada (U. de Chile)</p>
         </div>
       </div>
-      <span class="role-tag">Negocio, gestión y economía aplicada</span>
+      <span class="role-tag">CEO — Negocio, gestión y economía aplicada</span>
       <p class="founder-summary">Formación interdisciplinaria: ingeniería industrial, astronomía computacional y economía aplicada. Docencia continua en evaluación de proyectos y comportamiento organizacional, especializado en pricing y gestión de la relación con el cliente.</p>
       <div>
         <p class="block-label">Highlights</p>
@@ -155,13 +156,45 @@
 
     <article class="card">
       <div class="card-top">
+        <div class="avatar">DV</div>
+        <div>
+          <h2 class="founder-name">Diego Vega</h2>
+          <p class="founder-degree">Ing. Civil Eléctrico, especialización en Inteligencia Computacional y Robótica (U. de Chile)</p>
+        </div>
+      </div>
+      <span class="role-tag">CTO — IA, Visión Computacional y Deep Learning</span>
+      <p class="founder-summary">Base matemática y de ingeniería con foco profundo en deep learning, visión computacional y NLP. Memoria de título sobre identificación de vehículos vía embeddings (Transformers + CNN) con metric learning y clustering no supervisado.</p>
+      <div>
+        <p class="block-label">Highlights</p>
+        <ul class="highlights">
+          <li>Plataforma de análisis documental con OCR + NLP + base de grafos — Unholster (bajo NDA)</li>
+          <li>Memoria: clasificación de vehículos por embeddings, sin métodos tradicionales — repositorio público</li>
+          <li>Scraper en Python para el Sistema de Evaluación Ambiental (SEA)</li>
+        </ul>
+      </div>
+      <div class="skill-groups">
+        <p class="block-label">Herramientas</p>
+        <div class="chips">
+          <span class="chip">PyTorch</span><span class="chip">HuggingFace</span><span class="chip">OpenCV</span>
+          <span class="chip">scikit-learn</span><span class="chip">Scrapy</span><span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="card-foot">
+        <a href="https://www.linkedin.com/in/diego-andres-v-2ab937107/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/diegovega2001" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="cv-download" href="cv-diego-vega.pdf" download>Descargar CV ↓</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
         <div class="avatar">FP</div>
         <div>
           <h2 class="founder-name">Flavio Poblete</h2>
           <p class="founder-degree">Ing. Civil Industrial, Distinción Máxima (U. de Chile)</p>
         </div>
       </div>
-      <span class="role-tag">Delivery técnico — Datos, infraestructura, IA/ML y gobierno de datos</span>
+      <span class="role-tag">CDO — Datos, infraestructura, IA/ML y gobierno de datos</span>
       <p class="founder-summary">Especializado en ingeniería de datos y gobernanza, con base sólida además en machine learning, deep learning y NLP. Participa en el programa institucional de Gobierno de Datos de la Universidad de Chile (framework DAMA-DMBOK) y en la adopción de la nueva Ley de Protección de Datos Personales.</p>
       <div>
         <p class="block-label">Highlights</p>
